@@ -3,7 +3,7 @@ import { CountryList } from "../CountryList";
 import { useFilteredCountries } from "../../../../hooks/useFilteredCountries";
 import { usePaginatedCountries } from "../../../../hooks/usePaginatedCountries";
 import { useWeather } from "../../../../hooks/useWeather";
-// Mock hooks
+
 jest.mock("../../../../hooks/useFilteredCountries", () => ({
   useFilteredCountries: jest.fn(),
 }));
@@ -64,8 +64,8 @@ describe("<CountryList />", () => {
 
     (useFilteredCountries as jest.Mock).mockReturnValue(mockCountries);
     (usePaginatedCountries as jest.Mock)
-      .mockReturnValueOnce(mockCountries.slice(0, 10)) // First Page
-      .mockReturnValueOnce(mockCountries.slice(10, 20)); // Second Page
+      .mockReturnValueOnce(mockCountries.slice(0, 10))
+      .mockReturnValueOnce(mockCountries.slice(10, 20));
     (useWeather as jest.Mock).mockReturnValue({ weather: {}, loading: false });
 
     render(<CountryList searchQuery="" />);
