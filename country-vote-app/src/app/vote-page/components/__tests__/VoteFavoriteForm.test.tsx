@@ -135,6 +135,6 @@ describe("<VoteFavoriteForm />", () => {
     expect(
       screen.getByText("Your vote was successfully submitted")
     ).toBeInTheDocument();
-    expect(screen.getByRole("icon", { hidden: true })).toBeInTheDocument(); // IoCheckmarkCircleOutline icon
+    expect(screen.getByRole("icon", { hidden: true })).toBeInTheDocument();
   });
 });
